@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Py_Connector</RootNamespace>
+    <AssemblyName>Py_Connector</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBase\EFPangya.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFPangya.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\EFPangya.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\EFPangya.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFPangya.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Caddie.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Card.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Card_Equip.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Character.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Club_Info.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Daily_Quest.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Exception_Log.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Friend.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Game_Macro.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Guild_Emblem.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Guild_Info.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Guild_Log.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Guild_Member.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Item_Daily.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Item_Daily_Log.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Locker_Item.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Mail.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Mail_Item.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Map_Statistics.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Mascot.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Member.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Memorial_Log.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Personal.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Personal_Log.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_SelfDesign.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Server.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_String.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Transaction_Log.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_User_Equip.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_User_MatchHistory.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_User_Message.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_User_Statistics.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Pangya_Warehouse.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcAddItem_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcAddRent_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcAlterDaily_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcCheckUsername_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetAchievement_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetCaddies_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetCardEquip_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetCard_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetCharacter_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetGameServer_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetItemWarehouse_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetMacro_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetMail_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetMapStatistics_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetMascot_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetMatchHistory_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetMessengerServer_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetRoomData_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetStatistic_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetToolbar_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetTutorial_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetUCCData_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGetUserMessage_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGet_UserInfo_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGuildGetLog_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcGuildGetPlayerData_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcMailItem_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcReadMail_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ProcSaveUCCCopy_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\TD_ROOM_DATA.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_ADD_CARD_EQUIP_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_DAILYQUEST_ACCEPT_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_DAILYQUEST_LOAD_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_GAME_LOGIN_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_GET_ACHIEVEMENT_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_GET_COUNTER_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_GUILD_EMBLEM_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_INVEN_POP_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_LOGIN_SERVER_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_LOGIN_SERVER_US_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_MESSENGER_1PLAYER_GUILD_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_MESSENGER_LOGIN_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\USP_UCC_REQUEST_UPLOAD_Result.cs">
+      <DependentUpon>EFPangya.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="DataBase\EFPangya.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EFPangya.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataBase\EFPangya.edmx.diagram">
+      <DependentUpon>EFPangya.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataBase\EFPangya.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFPangya.edmx</DependentUpon>
+      <LastGenOutput>EFPangya.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBase\EFPangya.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFPangya.edmx</DependentUpon>
+      <LastGenOutput>EFPangya.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

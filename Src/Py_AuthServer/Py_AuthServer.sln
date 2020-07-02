@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Py_AuthServer", "Py_AuthServer\Py_AuthServer.csproj", "{9497BCC9-3167-42EB-B3F9-78185EFE953C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PangyaAPI", "..\PangyaAPI\PangyaAPI.csproj", "{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Py_Connector", "..\Py_Connector\Py_Connector\Py_Connector.csproj", "{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9497BCC9-3167-42EB-B3F9-78185EFE953C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9497BCC9-3167-42EB-B3F9-78185EFE953C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9497BCC9-3167-42EB-B3F9-78185EFE953C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9497BCC9-3167-42EB-B3F9-78185EFE953C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FF83A6B-30EF-41FC-960B-B43FBE84B134}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,356 @@
+{
+   "MemorialGachaNormalData":[
+      {
+         "Items":[
+            {
+               "Name":"Strength Boost",
+               "Number":1,
+               "TypeID":402653188,
+               "Quantity":5
+            },
+            {
+               "Name":"Miracle Sign",
+               "Number":2,
+               "TypeID":402653189,
+               "Quantity":5
+            },
+            {
+               "Name":"Spin Mastery",
+               "Number":3,
+               "TypeID":402653184,
+               "Quantity":5
+            },
+            {
+               "Name":"Curve Mastery",
+               "Number":4,
+               "TypeID":402653185,
+               "Quantity":5
+            },
+            {
+               "Name":"Generic Lucky Pangya",
+               "Number":5,
+               "TypeID":402653191,
+               "Quantity":5
+            },
+            {
+               "Name":"Generic Nerve Stabilizer",
+               "Number":6,
+               "TypeID":402653192,
+               "Quantity":5
+            },
+            {
+               "Name":"Club Modification Kit",
+               "Number":7,
+               "TypeID":436208143,
+               "Quantity":1
+            },
+            {
+               "Name":"Silent Wind",
+               "Number":8,
+               "TypeID":402653190,
+               "Quantity":3
+            },
+            {
+               "Name":"Bonus Card Patcher",
+               "Number":8,
+               "TypeID":436208015,
+               "Quantity":1
+            },
+            {
+               "Name":"Bomber Comet",
+               "Number":8,
+               "TypeID":335544321,
+               "Quantity":30
+            },
+            {
+               "Name":"Time Booster",
+               "Number":8,
+               "TypeID":436207633,
+               "Quantity":30
+            },
+            {
+               "Name":"Auto Caliper",
+               "Number":8,
+               "TypeID":436207680,
+               "Quantity":30
+            },
+            {
+               "Name":"UCIM Chip",
+               "Number":9,
+               "TypeID":436208145,
+               "Quantity":2
+            },
+            {
+               "Name":"Watermelon Comet",
+               "Number":9,
+               "TypeID":335544342,
+               "Quantity":40
+            },
+            {
+               "Name":"Safety",
+               "Number":9,
+               "TypeID":402653224,
+               "Quantity":5
+            },
+            {
+               "Name":"Time Booster",
+               "Number":9,
+               "TypeID":436207633,
+               "Quantity":100
+            },
+            {
+               "Name":"Auto Caliper",
+               "Number":9,
+               "TypeID":436207680,
+               "Quantity":100
+            },
+            {
+               "Name":"Abbot Coating Spray",
+               "Number":10,
+               "TypeID":436208144,
+               "Quantity":3
+            },
+            {
+               "Name":"Shamrock Comet",
+               "Number":10,
+               "TypeID":335544332,
+               "Quantity":50
+            },
+            {
+               "Name":"Power Potion",
+               "Number":10,
+               "TypeID":402653223,
+               "Quantity":10
+            },
+            {
+               "Name":"Air Note",
+               "Number":10,
+               "TypeID":436207815,
+               "Quantity":60
+            },
+            {
+               "Name":"Time Booster",
+               "Number":10,
+               "TypeID":436207633,
+               "Quantity":60
+            },
+            {
+               "Name":"Pangya Card Pack #1",
+               "Number":11,
+               "TypeID":2092957696,
+               "Quantity":1
+            },
+            {
+               "Name":"Sakura Comet",
+               "Number":11,
+               "TypeID":335544350,
+               "Quantity":50
+            },
+            {
+               "Name":"Double Strength Boost",
+               "Number":11,
+               "TypeID":402653230,
+               "Quantity":3
+            },
+            {
+               "Name":"Pang Mastery",
+               "Number":11,
+               "TypeID":436207618,
+               "Quantity":20
+            },
+            {
+               "Name":"Time Booster",
+               "Number":11,
+               "TypeID":436207633,
+               "Quantity":50
+            },
+            {
+               "Name":"Pangya Card Pack #2",
+               "Number":12,
+               "TypeID":2092957700,
+               "Quantity":1
+            },
+            {
+               "Name":"Phantom Comet",
+               "Number":12,
+               "TypeID":335544369,
+               "Quantity":30
+            },
+            {
+               "Name":"Duostar Lucky Pangya",
+               "Number":12,
+               "TypeID":402653194,
+               "Quantity":5
+            },
+            {
+               "Name":"Pang Mastery",
+               "Number":12,
+               "TypeID":436207618,
+               "Quantity":30
+            },
+            {
+               "Name":"Time Booster",
+               "Number":12,
+               "TypeID":436207633,
+               "Quantity":50
+            },
+            {
+               "Name":"Pangya Card Pack #3",
+               "Number":13,
+               "TypeID":2092957701,
+               "Quantity":1
+            },
+            {
+               "Name":"Rainbow Comet",
+               "Number":13,
+               "TypeID":335544352,
+               "Quantity":30
+            },
+            {
+               "Name":"Duostar Nerve Stabilizer",
+               "Number":13,
+               "TypeID":402653195,
+               "Quantity":5
+            },
+            {
+               "Name":"Pang Mastery",
+               "Number":13,
+               "TypeID":436207618,
+               "Quantity":30
+            },
+            {
+               "Name":"Auto Caliper",
+               "Number":13,
+               "TypeID":436207680,
+               "Quantity":40
+            },
+            {
+               "Name":"Pangya Card Pack #4",
+               "Number":14,
+               "TypeID":2092957703,
+               "Quantity":1
+            },
+            {
+               "Name":"Smiling Goblin Comet",
+               "Number":14,
+               "TypeID":335544465,
+               "Quantity":50
+            },
+            {
+               "Name":"Power Potion",
+               "Number":14,
+               "TypeID":402653223,
+               "Quantity":5
+            },
+            {
+               "Name":"Time Booster",
+               "Number":14,
+               "TypeID":436207633,
+               "Quantity":50
+            },
+            {
+               "Name":"Auto Caliper",
+               "Number":14,
+               "TypeID":436207680,
+               "Quantity":50
+            },
+            {
+               "Name":"Fragment of time (Fall)",
+               "Number":15,
+               "TypeID":436207709,
+               "Quantity":1
+            },
+            {
+               "Name":"Fragment of time (Spring)",
+               "Number":16,
+               "TypeID":436207707,
+               "Quantity":1
+            },
+            {
+               "Name":"Fragment of time (Summer)",
+               "Number":17,
+               "TypeID":436207708,
+               "Quantity":1
+            },
+            {
+               "Name":"Fragment of time (Winter)",
+               "Number":18,
+               "TypeID":436207710,
+               "Quantity":1
+            },
+            {
+               "Name":"Premium Memorial Coin",
+               "Number":19,
+               "TypeID":436208242,
+               "Quantity":5
+            },
+            {
+               "Name":"Jackal Set (S)",
+               "Number":20,
+               "TypeID":608256015,
+               "Quantity":1
+            },
+            {
+               "Name":"Puppy Set (N)",
+               "Number":21,
+               "TypeID":608174132,
+               "Quantity":1
+            },
+            {
+               "Name":"Bunny Girl (H)",
+               "Number":22,
+               "TypeID":608182322,
+               "Quantity":1
+            },
+            {
+               "Name":"Grizzled Bear Set (AZ)",
+               "Number":23,
+               "TypeID":608190501,
+               "Quantity":1
+            },
+            {
+               "Name":"Vulpine Set (C)",
+               "Number":24,
+               "TypeID":608198722,
+               "Quantity":1
+            },
+            {
+               "Name":"Coyote Set (M)",
+               "Number":25,
+               "TypeID":608206889,
+               "Quantity":1
+            },
+            {
+               "Name":"Kitten Set (K)",
+               "Number":26,
+               "TypeID":608215139,
+               "Quantity":1
+            },
+            {
+               "Name":"Bunny Girl (A)",
+               "Number":27,
+               "TypeID":608223292,
+               "Quantity":1
+            },
+            {
+               "Name":"Lone Wolf Set (KZ)",
+               "Number":28,
+               "TypeID":608231468,
+               "Quantity":1
+            },
+            {
+               "Name":"Feline Set (L)",
+               "Number":29,
+               "TypeID":608239698,
+               "Quantity":1
+            },
+            {
+               "Name":"Hello Pepper Set (NL)",
+               "Number":30,
+               "TypeID":608247843,
+               "Quantity":1
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Py_Login", "Py_Login\Py_Login.csproj", "{54383325-24CF-4395-BC3F-D0E6338BD1D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PangyaAPI", "..\PangyaAPI\PangyaAPI.csproj", "{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Py_Connector", "..\Py_Connector\Py_Connector\Py_Connector.csproj", "{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54383325-24CF-4395-BC3F-D0E6338BD1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54383325-24CF-4395-BC3F-D0E6338BD1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54383325-24CF-4395-BC3F-D0E6338BD1D7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{54383325-24CF-4395-BC3F-D0E6338BD1D7}.Debug|x86.Build.0 = Debug|Any CPU
+		{54383325-24CF-4395-BC3F-D0E6338BD1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54383325-24CF-4395-BC3F-D0E6338BD1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54383325-24CF-4395-BC3F-D0E6338BD1D7}.Release|x86.ActiveCfg = Release|Any CPU
+		{54383325-24CF-4395-BC3F-D0E6338BD1D7}.Release|x86.Build.0 = Release|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Debug|x86.Build.0 = Debug|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Release|x86.ActiveCfg = Release|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Release|x86.Build.0 = Release|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Debug|x86.Build.0 = Debug|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Release|x86.ActiveCfg = Release|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76EF1C7C-3511-4D4A-BFD9-B9014D648CD2}
+	EndGlobalSection
+EndGlobal

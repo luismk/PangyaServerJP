@@ -1,0 +1,51 @@
+﻿using PangyaAPI;
+using PangyaAPI.PangyaClient;
+using PangyaAPI.PangyaPacket;
+using System;
+
+namespace Py_Login
+{
+    public class Program
+    {
+        #region Fields
+        public static LoginServerTcp Server;
+        #endregion
+
+        static void Main()
+        {
+            Console.Title = $"Pangya Fresh UP ! LoginServer";
+
+            Server = new LoginServerTcp();
+
+            Server.ServerStart();
+
+            Server.OnPacketReceived += Server_OnPacketReceived;
+            //Escuta contínuamente entradas no console (Criar comandos para o Console)
+            for (;;)
+            {
+                var comando = Console.ReadLine().Split(new char[] { ' ' }, 2);
+                switch (comando[0].ToLower())
+                {
+                    case "": break;
+                    case "cls":
+                        case "clear":
+                        case "limpa":
+                        {
+                            Console.Clear();
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Comando inexistente");
+                        break;
+                }
+            }
+        }
+
+        private static void Server_OnPacketReceived(Player player, Packet packet)
+        {
+            var Client = (LPlayer)player;
+
+            Client.HandleRequestPacket((PangyaPacketsEnum)packet.Id, packet);
+        }
+    }
+}

@@ -1,0 +1,243 @@
+{
+   "BlackPapelData":[
+      {
+         "SupplyTypeID":436207656,
+         "SupplyTypeID2":436207657,
+         "SupplyTypeID3":436207658,
+         "Items":[
+            {
+               "Name":"Dual Tranquillizer",
+               "TypeID":402653195,
+               "MaxQuan":1,
+               "TypeRare":1,
+               "Probability":20,
+               "Valid":true
+            },
+            {
+               "Name":"Dual Lucky Pangya",
+               "TypeID":402653194,
+               "MaxQuan":1,
+               "TypeRare":1,
+               "Probability":20,
+               "Valid":true
+            },
+            {
+               "Name":"Oblivion Flower",
+               "TypeID":402653198,
+               "MaxQuan":1,
+               "TypeRare":1,
+               "Probability":20,
+               "Valid":true
+            },
+            {
+               "Name":"Silent Wind",
+               "TypeID":402653190,
+               "MaxQuan":1,
+               "TypeRare":1,
+               "Probability":20,
+               "Valid":true
+            },
+            {
+               "Name":"Power Calippers",
+               "TypeID":402653193,
+               "MaxQuan":1,
+               "TypeRare":1,
+               "Probability":20,
+               "Valid":true
+            },
+            {
+               "Name":"Timer Booster",
+               "TypeID":436207633,
+               "MaxQuan":50,
+               "TypeRare":1,
+               "Probability":20,
+               "Valid":true
+            },
+            {
+               "Name":"Replay Tape",
+               "TypeID":436207695,
+               "MaxQuan":50,
+               "TypeRare":1,
+               "Probability":20,
+               "Valid":true
+            },
+            {
+               "Name":"Blue Star Comet",
+               "TypeID":335544322,
+               "MaxQuan":25,
+               "TypeRare":1,
+               "Probability":4,
+               "Valid":true
+            },
+            {
+               "Name":"Love Comet",
+               "TypeID":335544323,
+               "MaxQuan":20,
+               "TypeRare":1,
+               "Probability":4,
+               "Valid":true
+            },
+            {
+               "Name":"Bomber Comet",
+               "TypeID":335544321,
+               "MaxQuan":20,
+               "TypeRare":1,
+               "Probability":4,
+               "Valid":true
+            },
+            {
+               "Name":"Water Comet",
+               "TypeID":335544325,
+               "MaxQuan":20,
+               "TypeRare":1,
+               "Probability":4,
+               "Valid":true
+            },
+            {
+               "Name":"Tiki Report Paper",
+               "TypeID":436207681,
+               "MaxQuan":2,
+               "TypeRare":2,
+               "Probability":30,
+               "Valid":true
+            },
+            {
+               "Name":"Bongdari CP(Event)",
+               "TypeID":436207656,
+               "MaxQuan":2,
+               "TypeRare":0,
+               "Probability":30,
+               "Valid":true
+            },
+            {
+               "Name":"Scratch Card Slip",
+               "TypeID":436207677,
+               "MaxQuan":1,
+               "TypeRare":1,
+               "Probability":4,
+               "Valid":true
+            },
+            {
+               "Name":"Scratch Card (Event)",
+               "TypeID":436207667,
+               "MaxQuan":20,
+               "TypeRare":1,
+               "Probability":4,
+               "Valid":true
+            },
+            {
+               "Name":"Strength Boost",
+               "TypeID":402653188,
+               "MaxQuan":4,
+               "TypeRare":0,
+               "Probability":100,
+               "Valid":true
+            },
+            {
+               "Name":"Spin Mastery",
+               "TypeID":402653184,
+               "MaxQuan":2,
+               "TypeRare":0,
+               "Probability":100,
+               "Valid":true
+            },
+            {
+               "Name":"Tranquillizer",
+               "TypeID":402653192,
+               "MaxQuan":2,
+               "TypeRare":0,
+               "Probability":100,
+               "Valid":true
+            },
+            {
+               "Name":"Lucky Pangya",
+               "TypeID":402653191,
+               "MaxQuan":2,
+               "TypeRare":0,
+               "Probability":100,
+               "Valid":true
+            },
+            {
+               "Name":"Miracle Sign",
+               "TypeID":402653189,
+               "MaxQuan":2,
+               "TypeRare":0,
+               "Probability":100,
+               "Valid":true
+            },
+            {
+               "Name":"Curve Mastery",
+               "TypeID":402653185,
+               "MaxQuan":20,
+               "TypeRare":0,
+               "Probability":100,
+               "Valid":true
+            },
+            {
+               "Name":"Dark-Cross Wing (A)",
+               "TypeID":135847967,
+               "MaxQuan":1,
+               "TypeRare":2,
+               "Probability":200,
+               "Valid":true
+            },
+            {
+               "Name":"Dark-Cross Wing (AZ)",
+               "TypeID":134850575,
+               "MaxQuan":1,
+               "TypeRare":2,
+               "Probability":200,
+               "Valid":true
+            },
+            {
+               "Name":"Dark-Cross Wing (C)",
+               "TypeID":135071766,
+               "MaxQuan":1,
+               "TypeRare":2,
+               "Probability":200,
+               "Valid":true
+            },
+            {
+               "Name":"Dark-Cross Wing (H)",
+               "TypeID":134588428,
+               "MaxQuan":1,
+               "TypeRare":2,
+               "Probability":200,
+               "Valid":true
+            },
+            {
+               "Name":"Dark-Cross Wing (K)",
+               "TypeID":135634971,
+               "MaxQuan":1,
+               "TypeRare":2,
+               "Probability":200,
+               "Valid":true
+            },
+            {
+               "Name":"Dark-Cross Wing (KZ)",
+               "TypeID":135634971,
+               "MaxQuan":1,
+               "TypeRare":2,
+               "Probability":200,
+               "Valid":true
+            },
+            {
+               "Name":"Dark-Cross Wing (M)",
+               "TypeID":135372815,
+               "MaxQuan":1,
+               "TypeRare":2,
+               "Probability":200,
+               "Valid":true
+            },
+            {
+               "Name":"Dark-Cross Wing (N)",
+               "TypeID":134219819,
+               "MaxQuan":1,
+               "TypeRare":2,
+               "Probability":200,
+               "Valid":true
+            }
+         ]
+      }
+   ]
+}

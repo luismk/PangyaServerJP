@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17A534FF-EF1F-4D2E-9739-EBBE99612602}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Py_Game</RootNamespace>
+    <AssemblyName>Py_Game</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\Data\ClubInfo.cs" />
+    <Compile Include="Client\Data\GameInfo.cs" />
+    <Compile Include="Client\GPlayer.cs" />
+    <Compile Include="Client\GPlayerLoad.cs" />
+    <Compile Include="Client\GPlayerPackets.cs" />
+    <Compile Include="Client\GPlayerSets.cs" />
+    <Compile Include="Client\Inventory\Collection\CaddieCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\CardCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\CardEquipCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\CharacterCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\FurnitureCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\MascotCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\TransactionsCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\TrophyCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\TrophyGPCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\TrophySpecialCollection.cs" />
+    <Compile Include="Client\Inventory\Collection\WarehouseCollection.cs" />
+    <Compile Include="Client\Inventory\Data\AddItem.cs" />
+    <Compile Include="Client\Inventory\Data\ItemSlotData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerAction.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerCaddieData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerCardData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerCardEquip.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerCharacterData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerDecoration.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerFurnitureData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerItemData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerMascotData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerTransactionData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerTrophyData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerTrophyGPData.cs" />
+    <Compile Include="Client\Inventory\Data\PlayerTrophySpecialData.cs" />
+    <Compile Include="Client\Inventory\PlayerHandleInventory.cs" />
+    <Compile Include="Client\Inventory\PlayerInventory.cs" />
+    <Compile Include="Data\ClubSystem.cs" />
+    <Compile Include="Data\GameShopData.cs" />
+    <Compile Include="Data\Point3D.cs" />
+    <Compile Include="Defines\PangyaEnums.cs" />
+    <Compile Include="Data\Class.cs" />
+    <Compile Include="Functions\Core\GameCore.cs" />
+    <Compile Include="Functions\TutorialCoreSystem.cs" />
+    <Compile Include="GameTools\ErrorCode.cs" />
+    <Compile Include="GameTools\Json\JsonArray.cs" />
+    <Compile Include="GameTools\Json\JsonObject.cs" />
+    <Compile Include="GameTools\Json\JsonValue.cs" />
+    <Compile Include="GameTools\Json\JsonValueType.cs" />
+    <Compile Include="GameTools\Json\Serialization\JsonParseException.cs" />
+    <Compile Include="GameTools\Json\Serialization\JsonReader.cs" />
+    <Compile Include="GameTools\Json\Serialization\JsonSerializationException.cs" />
+    <Compile Include="GameTools\Json\Serialization\JsonWriter.cs" />
+    <Compile Include="GameTools\Json\Serialization\TextPosition.cs" />
+    <Compile Include="GameTools\Json\Serialization\TextScanner.cs" />
+    <Compile Include="GameTools\JunkPacket.cs" />
+    <Compile Include="GameTools\MainServerLoop.cs" />
+    <Compile Include="GameTools\MathRand.cs" />
+    <Compile Include="GameTools\PacketCreator.cs" />
+    <Compile Include="GameTools\TimerQueue.cs" />
+    <Compile Include="GameTools\Tools.cs" />
+    <Compile Include="GameTools\Utils.cs" />
+    <Compile Include="Game\Helpers\GameHoles.cs" />
+    <Compile Include="Game\Collection\GameList.cs" />
+    <Compile Include="Game\Data\Class.cs" />
+    <Compile Include="Functions\AchievementCoreSystem.cs" />
+    <Compile Include="Functions\BoxItemCoreSystem.cs" />
+    <Compile Include="Functions\CaddieMagicBoxSystem.cs" />
+    <Compile Include="Functions\CardCoreSystem.cs" />
+    <Compile Include="Functions\CharacterCoreSystem.cs" />
+    <Compile Include="Functions\ChatOffineCoreSystem.cs" />
+    <Compile Include="Functions\ClubCoreSystem.cs" />
+    <Compile Include="Functions\CometRefillCoreSystem.cs" />
+    <Compile Include="Functions\DolfineLockerCoreSystem.cs" />
+    <Compile Include="Functions\GameMasterCoreSystem.cs" />
+    <Compile Include="Functions\GameShopCoreSystem.cs" />
+    <Compile Include="Functions\GuildCoreSystem.cs" />
+    <Compile Include="Functions\ItemRecycleCoreSystem.cs" />
+    <Compile Include="Functions\LobbyCoreSystem.cs" />
+    <Compile Include="Functions\LoginCoreSystem.cs" />
+    <Compile Include="Functions\LoginDailyRewardSystem.cs" />
+    <Compile Include="Functions\LoginInfoCoreSystem.cs" />
+    <Compile Include="Functions\MailBoxCoreSystem.cs" />
+    <Compile Include="Functions\MiniGames\MemorialCoreSystem.cs" />
+    <Compile Include="Functions\MessengerServerCoreSystem.cs" />
+    <Compile Include="Functions\MyRoomCoreSystem.cs" />
+    <Compile Include="Functions\MiniGames\PapelCoreSystem.cs" />
+    <Compile Include="Functions\RentalCoreSystem.cs" />
+    <Compile Include="Functions\MiniGames\ScratchCardCoreSystem.cs" />
+    <Compile Include="Functions\SelfDesignCoreSystem.cs" />
+    <Compile Include="Functions\TicketCoreSystem.cs" />
+    <Compile Include="Game\GameBase.cs" />
+    <Compile Include="Game\Helpers\GameExpTable.cs" />
+    <Compile Include="Game\Modes\ModeChatRoom.cs" />
+    <Compile Include="Game\Modes\ModeVersus.cs" />
+    <Compile Include="Game\Modes\PracticeMode.cs" />
+    <Compile Include="ItemList\CardList.cs" />
+    <Compile Include="ItemList\ItemMemorial.cs" />
+    <Compile Include="Properties\GlobalSuppressions.cs" />
+    <Compile Include="ItemList\BoxItemRandomList.cs" />
+    <Compile Include="ItemList\ItemRandomList.cs" />
+    <Compile Include="ItemList\TestList.cs" />
+    <Compile Include="ItemList\Type\ItemMemorialRandomList.cs" />
+    <Compile Include="Lobby\Collection\LobbyCollection.cs" />
+    <Compile Include="Lobby\PlayerLobby.cs" />
+    <Compile Include="MainServer\GameServer.cs" />
+    <Compile Include="MainServer\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Functions\EXP\EXPCoreSystem.cs" />
+    <Compile Include="Functions\Mail\MailSender.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PangyaFileCore\PangyaFileCore.csproj">
+      <Project>{6B47B60C-20BC-448C-8ECA-114749FAF412}</Project>
+      <Name>PangyaFileCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PangyaAPI\PangyaAPI.csproj">
+      <Project>{a53a1b9a-46e2-453a-bd76-f2d82b710cec}</Project>
+      <Name>PangyaAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Py_Connector\Py_Connector\Py_Connector.csproj">
+      <Project>{9351c3b8-97e1-49ec-a103-ac006b3fb2cf}</Project>
+      <Name>Py_Connector</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppIcon\control.ico" />
+    <Content Include="AppIcon\icon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>
