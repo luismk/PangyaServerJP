@@ -14,7 +14,6 @@ namespace Py_Login
     public class LoginServerTcp : TcpServer
     {
         public bool IsUnderMaintenance;
-        public byte Type { get; set; }
         public LoginServerTcp()
         {
             try
@@ -33,7 +32,6 @@ namespace Py_Login
                     AuthServer_Port = Ini.ReadInt32("Config", "AuthServer_Port", 7997),
                     Key = "3493ef7ca4d69f54de682bee58be4f93"
                 };
-                Type = Ini.ReadByte("Config", "LoginTypeVersion", 0);
                 if (ConnectToAuthServer(AuthServerConstructor()) == false)
                 {
                     WriteConsole.WriteLine("[ERROR_START_AUTH]: Não foi possível se conectar ao AuthServer");
@@ -126,7 +124,7 @@ namespace Py_Login
             
             if (player.Connected)
             {
-                AuthServer.Send(new AuthPacket() { ID = AuthPacketEnum.DISCONNECT_PLAYER_ALL_ON_SERVERS, Message = new { ID = player.GetUID } });
+                //AuthServer.Send(new AuthPacket() { ID = AuthPacketEnum.DISCONNECT_PLAYER_ALL_ON_SERVERS, Message = new { ID = player.GetUID } });
             }
         }
 

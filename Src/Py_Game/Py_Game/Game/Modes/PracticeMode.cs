@@ -90,7 +90,7 @@ namespace Py_Game.Game.Modes
             response.Write(0);
             response.Write(Idle);
             response.Write(fGameData.GMEvent); //GM Event 0(false), ON 1(true)
-            response.WriteZero(66);//GUILD DATA
+            response.WriteZero(77);//GUILD DATA
             response.Write(100);// rate pang 
             response.Write(100);// rate chuva 
             response.Write(Owner);

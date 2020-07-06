@@ -213,7 +213,7 @@ namespace Py_Game.Functions.Core
                     GameHandle.Send(ShowActionGamePlayInfo(player));
                     if (GameHandle.GameType == GAME_TYPE.CHAT_ROOM)
                     {
-                        GameHandle.Send(ShowRoomEntrance(player.ConnectionID, 15));
+                        //GameHandle.Send(ShowRoomEntrance(player.ConnectionID, 15));
                     }
                 }
                 else

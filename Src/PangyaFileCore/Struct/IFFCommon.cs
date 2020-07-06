@@ -11,10 +11,10 @@ namespace PangyaFileCore.Struct
     {
         public uint Enabled { get; set; }//4 position
         public uint TypeID { get; set; }//8 position
-        [field: MarshalAs(UnmanagedType.ByValTStr, SizeConst = 40)]
+        [field: MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
         public string Name { get; set; }//48 position
         public byte MinLevel { get; set; }//49 position
-        [field: MarshalAs(UnmanagedType.ByValTStr, SizeConst = 40)]
+        [field: MarshalAs(UnmanagedType.ByValTStr, SizeConst = 43)]
         public string Icon { get; set; }//89 position
         public ushort UNK { get; set; }//91 position
         public uint ItemPrice { get; set; }//95 position
@@ -32,7 +32,7 @@ namespace PangyaFileCore.Struct
         public ushort Mileage3 { get; set; }// 123 position
         public uint TikiPointShop { get; set; }// 127 position
         public uint TikiPang { get; set; }// 131 position
-        public uint Active { get; set; }// 135 position
+        //public uint Active { get; set; }// 135 position is exist?
         [field: MarshalAs(UnmanagedType.Struct)]
         public SystemTime DateStart { get; set; }// 149 position
         [field: MarshalAs(UnmanagedType.Struct)]

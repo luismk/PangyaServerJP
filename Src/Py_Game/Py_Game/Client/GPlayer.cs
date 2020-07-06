@@ -21,6 +21,7 @@ using PangyaAPI.BinaryModels;
 using PangyaAPI.PangyaClient;
 using PangyaAPI.Tools;
 using PangyaAPI.PangyaPacket;
+using Py_Game.MainServer;
 
 namespace Py_Game.Client
 {
@@ -35,18 +36,20 @@ namespace Py_Game.Client
         public bool TutorialCompleted { get; set; }
         public byte Visible { get; set; }
         public string LockerPWD { get; set; }
-        public UInt32 LockerPang { get; set; }
+        public uint LockerPang { get; set; }
         public PangyaEntities Db { get; set; }
-        public UInt32 GetPang { get { return ((uint)UserStatistic.Pang); } }
+        public uint GetPang { get { return ((uint)UserStatistic.Pang); } }
 
-        public UInt32 GetCookie { get; set; }
-        public UInt32 GetExpPoint { get { return (UserStatistic.EXP); } }
+        public uint GetCookie { get; set; }
+        public uint GetExpPoint { get { return (UserStatistic.EXP); } }
 
         public new byte GetLevel { get { return (Convert.ToByte(UserStatistic.Level)); } }
 
+       // public new GameServer Server { get { return Program._server; } }
+
         public string GetSubLogin { get { return GetLogin + "@NT"; } }
         public byte Assist { get; set; }
-        public Dictionary<UInt32, TAchievementCounter> AchievemetCounters { get; set; }
+        public Dictionary<uint, TAchievementCounter> AchievemetCounters { get; set; }
         public List<TAchievement> Achievements { get; set; }
         public List<TAchievementQuest> AchievementQuests { get; set; }
         public uint SearchUID { get; set; }
@@ -69,7 +72,7 @@ namespace Py_Game.Client
                 SetLevel(value);
             }
         }
-        public UInt32 Exp
+        public uint Exp
         {
             get
             {
@@ -314,7 +317,7 @@ namespace Py_Game.Client
                     break;
                 case TGAMEPACKET.PLAYER_TUTORIAL_MISSION:
                     {
-                       TutorialCoreSystem.PlayerTutorialMission(this, packet);
+                        TutorialCoreSystem.PlayerTutorialMission(this, packet);
                     }
                     break;
                 #endregion
@@ -326,17 +329,17 @@ namespace Py_Game.Client
                     break;
                 case TGAMEPACKET.PLAYER_OPEN_NORMAL_BONGDARI:
                     {
-                       PlayNormalPapel(this);
+                        PlayNormalPapel(this);
                     }
                     break;
                 case TGAMEPACKET.PLAYER_OPEN_BIG_BONGDARI:
                     {
-                       PlayBigPapel(this);
+                        PlayBigPapel(this);
                     }
                     break;
                 case TGAMEPACKET.PLAYER_MEMORIAL:
                     {
-                       new MemorialSystem().PlayMemorialGacha(this, packet);
+                        new MemorialSystem().PlayMemorialGacha(this, packet);
                     }
                     break;
                 #endregion
@@ -465,12 +468,12 @@ namespace Py_Game.Client
                 #region ScracthCard System
                 case TGAMEPACKET.PLAYER_OPENUP_SCRATCHCARD:
                     {
-                       new ScratchCardSystem(this);
+                        new ScratchCardSystem(this);
                     }
                     break;
                 case TGAMEPACKET.PLAYER_ENTER_SCRATCHY_SERIAL:
                     {
-                       PlayerScratchCardSerial(this, packet);
+                        PlayerScratchCardSerial(this, packet);
                     }
                     break;
                 case TGAMEPACKET.PLAYER_PLAY_SCRATCHCARD:
@@ -840,7 +843,7 @@ namespace Py_Game.Client
                 #endregion
                 case TGAMEPACKET.PLAYER_RECYCLE_ITEM:
                     {
-                          new ItemRecycleCoreSystem().PlayerRecycleItem(this, packet);
+                        new ItemRecycleCoreSystem().PlayerRecycleItem(this, packet);
                     }
                     break;
                 case TGAMEPACKET.PLAYER_REQUEST_CHAT_OFFLINE:

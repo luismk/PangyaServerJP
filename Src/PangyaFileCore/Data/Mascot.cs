@@ -34,8 +34,9 @@ namespace PangyaFileCore.Data
         public uint Effect1 { get; set; }
         public uint Effect2 { get; set; }
         public uint Effect3 { get; set; }
-        public UInt16 UN1 { get; set; }
-        public UInt16 UN2 { get; set; }
+        //not exist?
+        //public UInt16 UN1 { get; set; }
+        //public UInt16 UN2 { get; set; }
 
         public ushort GetDay()
         {

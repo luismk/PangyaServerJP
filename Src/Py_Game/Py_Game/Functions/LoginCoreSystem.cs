@@ -22,44 +22,52 @@ namespace Py_Game.Functions
             if (!packet.ReadPStr(out string UserID))
             {
                 WriteConsole.WriteLine("[CLIENT_PLAYER]: USER UNKNOWN");
-                PL.Send(new byte[] { 0x44, 0x00, 0x0B });
+                PL.SendResponse(new byte[] { 0x76, 0x02, 0x2C, 0x01, 0x00, 0x00 }); // ## send code 300
                 PL.Close();
+                return;
             }
 
             if (!packet.ReadUInt32(out uint UID))
             {
-                WriteConsole.WriteLine("[CLIENT_PLAYER]: UID UNKNOWN");
-                PL.Send(new byte[] { 0x44, 0x00, 0x0B });
+                WriteConsole.WriteLine("[CLIENT_ERROR]: UID UNKNOWN");
+                PL.SendResponse(new byte[] { 0x76, 0x02, 0x2C, 0x01, 0x00, 0x00 }); // ## send code 300
                 PL.Close();
+                return;
             }
 
             packet.Skip(6);
 
             if (!packet.ReadPStr(out string Code1))
             {
-                WriteConsole.WriteLine("[CLIENT_PLAYER]: AUTHLOGIN UNKNOWN");
-                PL.Send(new byte[] { 0x44, 0x00, 0x0B });
+                WriteConsole.WriteLine("[CLIENT_ERROR]: AUTHLOGIN UNKNOWN");
+                PL.SendResponse(new byte[] { 0x76, 0x02, 0x2C, 0x01, 0x00, 0x00 }); // ## send code 300
                 PL.Close();
+                return;
             }
 
             if (!packet.ReadPStr(out string Version))
             {
-                WriteConsole.WriteLine("[CLIENT_PLAYER]: Client Version Incompartible");
+                WriteConsole.WriteLine("[CLIENT_ERROR]: Client Version Incompartible");
                 PL.Send(new byte[] { 0x44, 0x00, 0x0B });
                 PL.Close();
+                return;
             }
 
             if (!Program.CheckVersion(Version))
             {
-                WriteConsole.WriteLine("[CLIENT_PLAYER]: Client Version Incompartible");
+                WriteConsole.WriteLine("[CLIENT_ERROR]: Client Version Incompartible");
                 PL.Send(new byte[] { 0x44, 0x00, 0x0B });
                 PL.Close();
+                return;
             }
 
             packet.Skip(23);
 
             if (!packet.ReadPStr(out string Code2))
             {
+                WriteConsole.WriteLine("[CLIENT_ERROR]: AUTHGAME UNKNOWN");
+                PL.SendResponse(new byte[] { 0x76, 0x02, 0x2C, 0x01, 0x00, 0x00 }); // ## send code 300
+                PL.Close();
                 return;
             }
             try
@@ -149,9 +157,9 @@ namespace Py_Game.Functions
             #region PlayerAchievement
             PL.ReloadAchievement();
 
-            // PL.SendAchievementCounter();
+            PL.SendAchievementCounter();
 
-            // PL.SendAchievement();
+            PL.SendAchievement();
             #endregion
 
             #region Call Messeger Server
@@ -229,8 +237,6 @@ namespace Py_Game.Functions
 
         public void SendJunkPackets(GPlayer PL)
         {
-            PL.SendResponse(ShowKeepLive());
-
             PL.SendResponse(new byte[] { 0x44, 0x00, 0xD3, 0x00 });
 
             PL.SendResponse(ShowLoadServer(0x01));

@@ -1,28 +1,28 @@
 # Pangya Server S8 JP
 
-Inicio do Projeto baseada na versão JP
+Project start based on JP version
 
-## Sobre o Projeto
+## About the project
 
-Servidor Desenvolvido na linguagem Csharp
+Server Developed in Csharp
 
-### Requesitos
+### Requirements
 
-é necessário alguns programas para rodar o projeto
+some programs are needed to run the project
 
-* [Visual Studio](https://visualstudio.microsoft.com/pt-br/) usado para compilação do projeto(2019)
-* [SQL SERVER](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads) 2017 ou superior usado para criar o banco que será usado
-* [Pangya Client](https://notlink.com) PangYa JP 983 usado para conectar ao servidor
+* [Visual Studio] (https://visualstudio.microsoft.com/pt-br/) used to compile the project (2019)
+* [SQL SERVER] (https://www.microsoft.com/en-us/sql-server/sql-server-downloads) 2017 or higher used to create the database that will be used
+* [Pangya Client] (https://notlink.com) PangYa JP 983 used to connect to the server
 
-### Instalação
+### Installation
 
-o primeiro projeto a ser rodado será AuthServer, pois o mesmo irar será sicronizar todos os servidores
+the first project to be run will be AuthServer, because the same thing will be to sync all servers
 
-```
-editar ou arquivos .ini para conectar-se ao servidor online ou localhost
-```
+``
+edit or .ini files to connect to the online server or localhost
+``
 
-## Autores
-* **Eric Antonio** - *Criador do Projeto de base* - [Pangya Unogames](https://github.com/eantoniobr)
-* **Luis MK** - *Contribuidor do projeto* - [Pangya Unogames](https://github.com/luismk)
-* **Fumitti** - *Influenciador do Projeto* - [Pangya Unogames](https://github.com/fumitti)
+## Authors
+* ** Eric Antonio ** - * Base Project Creator * - [Pangya Unogames] (https://github.com/eantoniobr)
+* ** Luis MK ** - * Project contributor * - [Pangya Unogames] (https://github.com/luismk)
+* ** Fumitti ** - * Project Influencer * - [Pangya Unogames] (https://github.com/fumitti)

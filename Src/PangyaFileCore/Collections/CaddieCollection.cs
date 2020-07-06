@@ -25,7 +25,7 @@ namespace PangyaFileCore.Collections
             MemoryStream Buffer;
             Caddie Caddie;
             PangyaBinaryReader Reader = null;
-            using (var zip = ZipFile.OpenRead("data/pangya_gb.iff"))//ler o arquivo de base
+            using (var zip = ZipFile.OpenRead("data/pangya_jp.iff"))//ler o arquivo de base
             {
                 var FileZip = zip.Entries.FirstOrDefault(c => c.Name == "Caddie.iff");//verifica se existe o arquivo
 

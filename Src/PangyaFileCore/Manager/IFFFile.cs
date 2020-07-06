@@ -59,7 +59,7 @@ namespace PangyaFileCore.Manager
         {
             try
             {
-                if (File.Exists("data/pangya_gb.iff"))
+                if (File.Exists("data/pangya_jp.iff"))
                 {
                     Card.Load();
                     Items.Load();
@@ -76,17 +76,17 @@ namespace PangyaFileCore.Manager
                     LevelPrize.Load();
                     Ball.Load();
                     GPSpecial.Load();
-                    GPReward.Load(); 
-                    MemorialRare.Load(); 
-                    MemorialCoin.Load(); 
-                    MgicBox.Load(); 
+                    GPReward.Load();
+                    MemorialRare.Load();
+                    MemorialCoin.Load();
+                    MgicBox.Load();
                     AuxPart.Load();
                     Desc.Load();
-                    Part.Load(); 
+                    Part.Load();
                 }
                 else
                 {
-                    throw new Exception("[ERROR_IFF]: data/pangya_gb.iff file in folder not found !");
+                    throw new Exception("[ERROR_IFF]: data/pangya_jp.iff file in folder not found !");
                 }
             }
             catch (Exception ex)

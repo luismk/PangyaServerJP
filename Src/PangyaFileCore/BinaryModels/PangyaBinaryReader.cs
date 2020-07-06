@@ -12,7 +12,7 @@ namespace PangyaFileCore.BinaryModels
         public PangyaBinaryReader(Stream input, Encoding encoding) : base(input, encoding) { }
 
         public PangyaBinaryReader(Stream input, Encoding encoding, bool leaveOpen) : base(input, encoding, leaveOpen) { }
-       
+
         public void Skip(int count)
         {
             Seek(count, 1);
@@ -36,7 +36,7 @@ namespace PangyaFileCore.BinaryModels
             BaseStream.Position = previousOffset;
             return array;
         }
-        public byte[] GetRemaining()
+        public byte[] GetRemainingData()
         {
             int previousOffset;
             previousOffset = (int)BaseStream.Position;
@@ -52,8 +52,9 @@ namespace PangyaFileCore.BinaryModels
                 var data = new byte[Count];
                 //ler os dados
                 BaseStream.Read(data, 0, (int)Count);
+                var enc = Encoding.GetEncoding("Shift_JIS");
 
-                value = Encoding.ASCII.GetString(data);
+                value = enc.GetString(data);
             }
             catch
             {
@@ -67,7 +68,9 @@ namespace PangyaFileCore.BinaryModels
             try
             {
                 var size = ReadUInt16();
-                value = Encoding.ASCII.GetString(ReadBytes(size));
+                var enc = Encoding.GetEncoding("Shift_JIS");
+
+                value = enc.GetString(ReadBytes(size));
             }
             catch
             {
@@ -82,7 +85,9 @@ namespace PangyaFileCore.BinaryModels
             try
             {
                 var size = ReadUInt16();
-                return Encoding.ASCII.GetString(ReadBytes(size));
+                var enc = Encoding.GetEncoding("Shift_JIS");
+
+                return enc.GetString(ReadBytes(size));
             }
             catch
             {
@@ -97,7 +102,9 @@ namespace PangyaFileCore.BinaryModels
                 //ler os dados
                 BaseStream.Read(data, 0, (int)Count);
 
-                return Encoding.ASCII.GetString(data).Replace("\0", "");
+                var enc = Encoding.GetEncoding("Shift_JIS");
+
+                return enc.GetString(data).Replace("\0", "");
             }
             catch
             {
@@ -150,7 +157,7 @@ namespace PangyaFileCore.BinaryModels
             return true;
         }
 
-      
+
         public bool ReadBytes(out byte[] value)
         {
             try
@@ -292,11 +299,11 @@ namespace PangyaFileCore.BinaryModels
             try
             {
                 var obj = new object();
-                byte[] BytesRead = ReadBytes(Count);
+                byte[] recordData = ReadBytes(Count);
 
                 IntPtr ptr = Marshal.AllocHGlobal(Count);
 
-                Marshal.Copy(BytesRead, 0, ptr, Count);
+                Marshal.Copy(recordData, 0, ptr, Count);
 
                 value = Marshal.PtrToStructure(ptr, obj.GetType());
                 Marshal.FreeHGlobal(ptr);
@@ -340,17 +347,17 @@ namespace PangyaFileCore.BinaryModels
         {
             var Count = Marshal.SizeOf(value);
 
-            byte[] BytesRead = ReadBytes(Count);
+            byte[] recordData = ReadBytes(Count);
 
-            if (BytesRead.Length != Count)
+            if (recordData.Length != Count)
             {
                 throw new Exception(
-                    $"The record length ({BytesRead.Length}) mismatches the length of the passed structure ({Count})");
+                    $"The record length ({recordData.Length}) mismatches the length of the passed structure ({Count})");
             }
 
             IntPtr ptr = Marshal.AllocHGlobal(Count);
 
-            Marshal.Copy(BytesRead, 0, ptr, Count);
+            Marshal.Copy(recordData, 0, ptr, Count);
 
             value = Marshal.PtrToStructure(ptr, value.GetType());
             Marshal.FreeHGlobal(ptr);
@@ -359,11 +366,11 @@ namespace PangyaFileCore.BinaryModels
 
         public object Read(object value, int Count)
         {
-            byte[] BytesRead = ReadBytes(Count);
+            byte[] recordData = ReadBytes(Count);
 
             IntPtr ptr = Marshal.AllocHGlobal(Count);
 
-            Marshal.Copy(BytesRead, 0, ptr, Count);
+            Marshal.Copy(recordData, 0, ptr, Count);
 
             value = Marshal.PtrToStructure(ptr, value.GetType());
             Marshal.FreeHGlobal(ptr);
@@ -452,7 +459,7 @@ namespace PangyaFileCore.BinaryModels
                         break;
                     case TypeCode.DateTime:
                         {
-                           property.SetValue(obj, ReadDateTime());
+                            property.SetValue(obj, ReadDateTime());
                         }
                         break;
                     case TypeCode.String:
@@ -467,7 +474,7 @@ namespace PangyaFileCore.BinaryModels
                         break;
                 }
             }
-           // return obj;
-        }       
+            // return obj;
+        }
     }
 }

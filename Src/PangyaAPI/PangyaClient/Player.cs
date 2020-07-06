@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Threading.Tasks;
 using static PangyaAPI.Crypts.Cryptor;
 namespace PangyaAPI.PangyaClient
 {
@@ -163,6 +164,7 @@ namespace PangyaAPI.PangyaClient
             {
                 Tcp.GetStream().Write(buffer, 0, buffer.Length);
             }
+            Task.Delay(1000);
         }
         public void SaveWrite(string name = "")
         {

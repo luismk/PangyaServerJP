@@ -1,18 +1,12 @@
-﻿using PangyaAPI;
-using System;
+﻿using System;
 using System.Net.Sockets;
-using Py_Connector;
 using Py_Connector.DataBase;
 using System.Linq;
 using PangyaAPI.BinaryModels;
 using System.Text;
-using System.Data.Entity.Core.Objects;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using PangyaAPI.PangyaClient;
 using PangyaAPI.Tools;
 using PangyaAPI.PangyaPacket;
-
 namespace Py_Login
 {
     public class LPlayer : Player
@@ -181,7 +175,7 @@ namespace Py_Login
                 Auth1 = RandomAuth(7);
                 Auth2 = RandomAuth(7);
 
-                if(Program.Server.Type == 0)
+                if(Pwd.Length == 32)
                 {
                    var result = _db.USP_LOGIN_SERVER_US(User, Pwd, GetAddress, Auth1, Auth2).FirstOrDefault();
                     UspLoginServer = new USP_LOGIN_SERVER_Result
@@ -193,7 +187,7 @@ namespace Py_Login
                         Logon = result.Logon, UID = result.UID
                     };
                 }
-                if (Program.Server.Type != 0)
+                if (Pwd.Length <= 32)
                 {
                     UspLoginServer = _db.USP_LOGIN_SERVER(User, Pwd, GetAddress, Auth1, Auth2).FirstOrDefault();
                 }
@@ -342,7 +336,7 @@ namespace Py_Login
         {
 
             packet.ReadPStr(out string Username);
-            packet.ReadInt32(out int UID);
+            packet.ReadUInt32(out uint UID);
             packet.ReadPStr(out string AuthKey_Game);
             SetAUTH_KEY_1(RandomAuth(7));
 

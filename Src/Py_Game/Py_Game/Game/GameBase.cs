@@ -1231,11 +1231,11 @@ namespace Py_Game.Game
             FirstShot = true;
         }
 
-        protected void PlayerEnterToRoom(Packet packet)
+        protected void PlayerEnterToRoom(GPlayer player,Packet packet)
         {
             var ConID = packet.ReadUInt32();
 
-            Send(ShowRoomEntrance(ConID));
+            Send(ShowRoomEntrance(player.ConnectionID));
         }
 
         protected void PlayerAction(GPlayer player, Packet packet)
@@ -1253,7 +1253,7 @@ namespace Py_Game.Game
 
                 if (GameType == GAME_TYPE.CHAT_ROOM && Action == 4)
                 {
-                    Send(ShowRoomEntrance(player.ConnectionID, 15));
+                    //Send(ShowRoomEntrance(player.ConnectionID, 15));
                 }
                 switch ((TPLAYER_ACTION)Action)
                 {
@@ -1358,7 +1358,7 @@ namespace Py_Game.Game
                     break;
                 case TGAMEPACKET.PLAYER_ENTER_TO_ROOM:
                     {
-                        PlayerEnterToRoom(packet);
+                        PlayerEnterToRoom(player, packet);
                     }
                     break;
                 case TGAMEPACKET.PLAYER_ACTION:

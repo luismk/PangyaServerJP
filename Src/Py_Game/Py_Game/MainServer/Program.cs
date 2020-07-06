@@ -3,6 +3,8 @@ using PangyaAPI.BinaryModels;
 using PangyaAPI.PangyaClient;
 using PangyaAPI.PangyaPacket;
 using PangyaAPI.Tools;
+using PangyaFileCore;
+using static PangyaFileCore.IffBaseManager;
 using Py_Game.Client;
 using Py_Game.Defines;
 using Py_Game.GameTools;

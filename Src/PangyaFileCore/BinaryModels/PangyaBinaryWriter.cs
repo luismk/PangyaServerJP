@@ -7,6 +7,7 @@ namespace PangyaFileCore.BinaryModels
 {
     public class PangyaBinaryWriter : BinaryWriter
     {
+        public PangyaBinaryWriter(Stream output) { }
         public PangyaBinaryWriter(Stream output, Encoding encoding) : base(output, encoding)
         {
         }
@@ -29,8 +30,9 @@ namespace PangyaFileCore.BinaryModels
         /// <returns>Array Of Bytes</returns>
         public byte[] GetBytes()
         {
-            if (OutStream is MemoryStream stream)
-                return stream.ToArray();
+            if (OutStream is MemoryStream)
+                return ((MemoryStream)OutStream).ToArray();
+
 
             using (var memoryStream = new MemoryStream())
             {
@@ -58,8 +60,10 @@ namespace PangyaFileCore.BinaryModels
                     message = string.Empty;
                 }
 
-                message = message.PadRight(length, (char)0x00);
-                Write(message.Select(Convert.ToByte).ToArray());
+                var ret = new byte[length];
+                Encoding.GetEncoding("Shift_JIS").GetBytes(message).Take(length).ToArray().CopyTo(ret, 0);
+
+                Write(ret);
             }
             catch
             {
@@ -88,14 +92,14 @@ namespace PangyaFileCore.BinaryModels
             if (data == null) data = "";
             try
             {
-                int length = data.Length;
+                var encoded = Encoding.GetEncoding("Shift_JIS").GetBytes(data);
+                var length = encoded.Length;
                 if (length >= ushort.MaxValue)
                 {
                     return false;
                 }
-
                 Write((short)length);
-                Write(data.ToCharArray());
+                Write(encoded);
             }
             catch
             {
@@ -150,6 +154,32 @@ namespace PangyaFileCore.BinaryModels
             }
             return true;
         }
+        public bool WriteUInt16(int value)
+        {
+            try
+            {
+                Write((ushort)value);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool WriteUInt16(uint value)
+        {
+            try
+            {
+                Write((ushort)value);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
 
         public bool WriteByte(byte value)
         {

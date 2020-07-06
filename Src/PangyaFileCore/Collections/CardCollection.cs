@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+
 namespace PangyaFileCore.Collections
 {
     public class CardCollection : Dictionary<uint, Card>
@@ -26,7 +29,7 @@ namespace PangyaFileCore.Collections
             Card Card;
             PangyaBinaryReader Reader = null;
             ListCard = new List<Card>();
-            using (var zip = ZipFile.OpenRead("data/pangya_gb.iff"))//ler o arquivo de base
+            using (var zip = ZipFile.OpenRead("data/pangya_jp.iff"))//ler o arquivo de base
             {
                 var FileZip = zip.Entries.FirstOrDefault(c => c.Name == "Card.iff");//verifica se existe o arquivo
 
@@ -48,16 +51,23 @@ namespace PangyaFileCore.Collections
                 Reader.Seek(0, 0);
 
                 Reader.ReadUInt16(out ushort recordCount);
-                long recordLength = ((Reader.GetSize() - 8L) / (recordCount));
+                long recordLength = (Reader.GetSize() - 8L) / (recordCount);
                 Reader.ReadUInt16(out BindingID);
                 Reader.ReadUInt32(out Version);
 
                 for (int i = 0; i < recordCount; i++)
                 {
+                    var Count = Marshal.SizeOf(new Card());
+
                     Card = (Card)Reader.Read(new Card());
 
                     Add(Card.Base.TypeID, Card);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.ReadKey();
             }
             finally
             {

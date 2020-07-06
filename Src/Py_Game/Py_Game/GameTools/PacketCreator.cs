@@ -126,9 +126,9 @@ namespace Py_Game.GameTools
                 Response.WriteZero(4);
                 Response.WriteUInt16(MaxPlayers);
                 Response.WriteUInt16(PlayersCount);
-                Response.WriteByte(LobbyID);
+                Response.Write(LobbyID); //Lobby ID
                 Response.WriteUInt16(0); //ルーム制限あるね
-                Response.WriteUInt16(LobbyFlag);
+                Response.WriteUInt16(LobbyFlag); //メンテナンス表記+ナチュラルマーク
                 Response.WriteUInt16(0); //メンテナンス表記+Granplix
                 Response.WriteUInt16(0); //メンテナンス表記+なんか
                 Response.WriteUInt16(0); //メンテナンス表記+ナチュラルマーク

@@ -1,10 +1,13 @@
 ﻿using PangyaFileCore.BinaryModels;
 using PangyaFileCore.Data;
+using PangyaFileCore.Struct;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Runtime.InteropServices;
+
 namespace PangyaFileCore.Collections
 {
     public class CharacterCollection : Dictionary<uint, Character>
@@ -28,7 +31,7 @@ namespace PangyaFileCore.Collections
 
             PangyaBinaryReader Reader = null;
 
-            using (var zip = ZipFile.OpenRead("data/pangya_gb.iff"))//ler o arquivo de base
+            using (var zip = ZipFile.OpenRead("data/pangya_jp.iff"))//ler o arquivo de base
             {
                 var FileZip = zip.Entries.FirstOrDefault(c => c.Name == "Character.iff");//verifica se existe o arquivo
 
@@ -60,9 +63,11 @@ namespace PangyaFileCore.Collections
 
                 for (int i = 0; i < recordCount; i++)
                 {
+                    var Count = Marshal.SizeOf(new Character());
+
                     Character = (Character)Reader.Read(new Character());
 
-                    Add(Character.Base.TypeID, Character);
+                    Add(Character.Base.TypeID,Character);
                 }
             }
             finally
@@ -130,7 +135,7 @@ namespace PangyaFileCore.Collections
 
         public bool LoadCharacter(UInt32 ID, ref Character Character)
         {
-            if (!TryGetValue(ID, out Character))
+            if(!TryGetValue(ID, out Character))
             {
                 return false;
             }

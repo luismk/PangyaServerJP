@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +30,7 @@ namespace PangyaFileCore.Collections
 
             PangyaBinaryReader Reader = null;
 
-            using (var zip = ZipFile.OpenRead("data/pangya_gb.iff"))//ler o arquivo de base
+            using (var zip = ZipFile.OpenRead("data/pangya_jp.iff"))//ler o arquivo de base
             {
                 var FileZip = zip.Entries.FirstOrDefault(c => c.Name == "Mascot.iff");//verifica se existe o arquivo
 
@@ -61,6 +62,8 @@ namespace PangyaFileCore.Collections
 
                 for (int i = 0; i < recordCount; i++)
                 {
+                    var Count = Marshal.SizeOf(new Mascot());
+
                     Mascot = (Mascot)Reader.Read(new Mascot());
                     Add(Mascot.Base.TypeID, Mascot);
                 }

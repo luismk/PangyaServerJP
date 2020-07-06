@@ -17,6 +17,7 @@ using PangyaAPI.Server;
 using PangyaAPI.Tools;
 using PangyaAPI.PangyaClient;
 using PangyaFileCore;
+using static PangyaFileCore.IffBaseManager;
 namespace Py_Game.MainServer
 {
     public class GameServer : TcpServer
@@ -82,9 +83,9 @@ namespace Py_Game.MainServer
                 //Inicia os Lobby's
                LobbyList = new ChannelCollection(Ini);
                 //Inicia a leitura dos arquivos .iff
-                new IffBaseManager();
-                //Inicia Thread para escuta de clientes
-                var WaitConnectionsThread = new Thread(new ThreadStart(HandleWaitConnections));
+                new IffBaseManager();//is 100% work? test for iff
+               //Inicia Thread para escuta de clientes
+               var WaitConnectionsThread = new Thread(new ThreadStart(HandleWaitConnections));
                 WaitConnectionsThread.Start();
             }
             catch (Exception erro)
@@ -99,7 +100,6 @@ namespace Py_Game.MainServer
         {
             var player = new GPlayer(tcp)
             {
-                Server = this,
                 ConnectionID = NextConnectionId
             };
 
@@ -366,7 +366,7 @@ namespace Py_Game.MainServer
                 ReadCommand = "";
             }
             switch (Command[0])
-            {
+            { 
                 case "cls":
                 case "limpar":
                 case "clear":

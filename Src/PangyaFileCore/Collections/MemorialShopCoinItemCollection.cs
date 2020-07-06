@@ -27,9 +27,9 @@ namespace PangyaFileCore.Collections
 
             PangyaBinaryReader Reader = null;
 
-            using (var zip = ZipFile.OpenRead("data/pangya_gb.iff"))//ler o arquivo de base
+            using (var zip = ZipFile.OpenRead("data/pangya_jp.iff"))//ler o arquivo de base
             {
-                var FileZip = zip.Entries.FirstOrDefault(c => c.Name == "MemorialShopCoinItem.iff");//verifica se existe o arquivo
+                var FileZip = zip.Entries.FirstOrDefault(c => c.Name == "MemorialShopCoinItem.sff");//verifica se existe o arquivo
 
                 if (FileZip == null)
                 {
@@ -59,6 +59,8 @@ namespace PangyaFileCore.Collections
 
                 for (int i = 0; i < recordCount; i++)
                 {
+                    var Count = System.Runtime.InteropServices.Marshal.SizeOf(new MemorialCoinItem());
+
                     Item = (MemorialCoinItem)Reader.Read(new MemorialCoinItem());
 
                     this.Add(Item.TypeID, Item);
