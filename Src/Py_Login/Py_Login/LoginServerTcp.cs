@@ -126,7 +126,7 @@ namespace Py_Login
             
             if (player.Connected)
             {
-                AuthServer.Send(new AuthPacket() { ID = AuthPacketEnum.DISCONNECT_PLAYER_ALL_ON_SERVERS, Message = new { ID = player.GetUID } });
+                //AuthServer.Send(new AuthPacket() { ID = AuthPacketEnum.DISCONNECT_PLAYER_ALL_ON_SERVERS, Message = new { ID = player.GetUID } });
             }
         }
 
