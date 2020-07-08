@@ -1,0 +1,1 @@
+server works with sql server 2017 (version 14)
