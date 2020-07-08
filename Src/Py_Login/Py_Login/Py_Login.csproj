@@ -106,7 +106,7 @@
       <Project>{9351c3b8-97e1-49ec-a103-ac006b3fb2cf}</Project>
       <Name>Py_Connector</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\PangyaAPI\PangyaAPI.csproj">
+    <ProjectReference Include="..\..\PangyaAPI\PangyaAPI\PangyaAPI.csproj">
       <Project>{a53a1b9a-46e2-453a-bd76-f2d82b710cec}</Project>
       <Name>PangyaAPI</Name>
     </ProjectReference>

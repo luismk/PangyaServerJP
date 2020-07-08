@@ -306,14 +306,12 @@ namespace Py_Game.Game.Modes
                         packet.Skip(9);
                         UN = packet.ReadBytes(61);
                         resp.Write(UN);
-                        packet.Save($"PlayerShotInfo-{(TShotType)ShotType}-{player.GetLogin}");
                     }
                     break;
                 default:
                     {
                         UN = packet.ReadBytes(61);
                         resp.Write(UN);
-                        packet.Save($"PlayerShotInfo-{(TShotType)ShotType}-{player.GetLogin}");
                     }
                     break;
             }

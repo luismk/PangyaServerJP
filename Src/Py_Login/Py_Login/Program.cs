@@ -1,6 +1,7 @@
 ﻿using PangyaAPI;
 using PangyaAPI.PangyaClient;
 using PangyaAPI.PangyaPacket;
+using Py_Login.MainServer;
 using System;
 
 namespace Py_Login
@@ -8,14 +9,14 @@ namespace Py_Login
     public class Program
     {
         #region Fields
-        public static LoginServerTcp Server;
+        public static LoginServer Server;
         #endregion
 
         static void Main()
         {
             Console.Title = $"Pangya Fresh UP ! LoginServer";
 
-            Server = new LoginServerTcp();
+            Server = new LoginServer();
 
             Server.ServerStart();
 

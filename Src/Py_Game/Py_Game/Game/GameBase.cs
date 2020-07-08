@@ -945,7 +945,6 @@ namespace Py_Game.Game
                 GameCountSeason = packet.ReadUInt32(),
                 Unknown2 = new byte[8] { packet.ReadByte(), packet.ReadByte(), packet.ReadByte(), packet.ReadByte(), packet.ReadByte(), packet.ReadByte(), packet.ReadByte(), packet.ReadByte() },
             };
-            packet.Save("PlayerStatistic");
             #endregion
             player.GameInfo.GameData.Statistic = Statistics;
             player.GameInfo.GameData.HoleComplete = true;

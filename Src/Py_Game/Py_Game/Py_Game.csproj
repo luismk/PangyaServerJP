@@ -180,7 +180,7 @@
       <Project>{6B47B60C-20BC-448C-8ECA-114749FAF412}</Project>
       <Name>PangyaFileCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\PangyaAPI\PangyaAPI.csproj">
+    <ProjectReference Include="..\..\PangyaAPI\PangyaAPI\PangyaAPI.csproj">
       <Project>{a53a1b9a-46e2-453a-bd76-f2d82b710cec}</Project>
       <Name>PangyaAPI</Name>
     </ProjectReference>

@@ -47,7 +47,7 @@ namespace Py_Game.MainServer
                     AuthServer_Port = Ini.ReadInt32("Config", "AuthServer_Port", 7997),
                     Key = "3493ef7ca4d69f54de682bee58be4f93"
                 };
-
+                ShowLog = Ini.ReadBool("Config", "PacketLog", false);
                 Messenger_Active = Ini.ReadBool("Config", "Messenger_Server", false);
 
                 Console.Title = $"Pangya Fresh Up! GameServer - {Data.Name} - Players: {Players.Count} ";

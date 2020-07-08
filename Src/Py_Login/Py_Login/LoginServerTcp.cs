@@ -9,12 +9,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-namespace Py_Login
+namespace Py_Login.MainServer
 {
-    public class LoginServerTcp : TcpServer
+    public class LoginServer : TcpServer
     {
         public bool IsUnderMaintenance;
-        public LoginServerTcp()
+        public LoginServer()
         {
             try
             {
@@ -32,6 +32,7 @@ namespace Py_Login
                     AuthServer_Port = Ini.ReadInt32("Config", "AuthServer_Port", 7997),
                     Key = "3493ef7ca4d69f54de682bee58be4f93"
                 };
+                ShowLog = Ini.ReadBool("Config", "PacketLog", false);
                 if (ConnectToAuthServer(AuthServerConstructor()) == false)
                 {
                     WriteConsole.WriteLine("[ERROR_START_AUTH]: Não foi possível se conectar ao AuthServer");

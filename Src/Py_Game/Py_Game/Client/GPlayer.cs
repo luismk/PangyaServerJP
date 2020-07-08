@@ -857,7 +857,7 @@ namespace Py_Game.Client
                         WriteConsole.WriteLine($"[PLAYER_CALL_PACKET_UNKNOWN]: [{PacketID},{GetLogin}]", ConsoleColor.Red);
                         //anula qualquer pacote id não mencionado ou não identificado
                         Send(PacketCreator.ShowCancelPacket());
-                        packet.Save("PLAYER_CALL_PACKET_UNKNOWN");
+                        packet.Save();
                     }
                     break;
                     #endregion
