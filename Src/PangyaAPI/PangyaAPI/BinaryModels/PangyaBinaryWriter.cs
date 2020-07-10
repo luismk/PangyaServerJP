@@ -321,6 +321,13 @@ namespace PangyaAPI.BinaryModels
             return true;
         }
 
-
+        public void SaveWrite(string name)
+        {
+            if (Directory.Exists("savepacket") == false)
+            {
+                Directory.CreateDirectory("savepacket");
+            }
+            File.WriteAllBytes($"savepacket\\{name}{"-"}{new Random().Next()}", GetBytes());
+        }
     }
 }

@@ -23,6 +23,7 @@ namespace Py_Game.Functions
             {
                 return;
             }
+
             var lobby = LobbyList.GetLobby(lobbyId);
 
             if (lp != null)
@@ -49,7 +50,7 @@ namespace Py_Game.Functions
                 {
                     if (RequestJoinGameList == false)
                     {
-                        player.SendResponse(new byte[] { 0x95, 0x00, 0x02, 0x01, 0x00 });
+                       // player.SendResponse(new byte[] { 0x95, 0x00, 0x02, 0x01, 0x00 });
 
                         player.SendResponse(ShowEnterLobby(1));
 
@@ -80,7 +81,7 @@ namespace Py_Game.Functions
                     // ## if request join lobby
                     if (RequestJoinGameList)
                     {
-                        player.SendResponse(new byte[] { 0x95, 0x00, 0x02, 0x01, 0x00 });
+                        //player.SendResponse(new byte[] { 0x95, 0x00, 0x02, 0x01, 0x00 });
 
                         player.SendResponse(ShowEnterLobby(1));
 

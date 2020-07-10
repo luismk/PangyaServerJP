@@ -28,7 +28,7 @@ namespace Py_Game.MainServer
         {
             try
             {
-                Ini = new IniFile(ConfigurationManager.AppSettings["Config"]);
+                Ini = new IniFile(ConfigurationManager.AppSettings["ServerConfig"]);
                 Data = new ServerSettings
                 {
                     Name = Ini.ReadString("Config", "Name", "Pippin"),
@@ -81,7 +81,9 @@ namespace Py_Game.MainServer
                 _server.Start((int)Data.MaxPlayers);
                 WriteConsole.WriteLine($"[SERVER_START]: PORT {Data.Port}", ConsoleColor.Green);
                 //Inicia os Lobby's
-               LobbyList = new ChannelCollection(Ini);
+                Ini = new IniFile(ConfigurationManager.AppSettings["ChannelConfig"]);
+
+                LobbyList = new ChannelCollection(Ini);
                 //Inicia a leitura dos arquivos .iff
                 new IffBaseManager();//is 100% work? test for iff
                //Inicia Thread para escuta de clientes

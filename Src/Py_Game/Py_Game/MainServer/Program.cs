@@ -41,6 +41,7 @@ namespace Py_Game.MainServer
             {
                 WriteConsole.WriteLine($"[PLAYER_CALL_PACKET]: [{(TGAMEPACKET)packet.Id},{player.GetLogin}]", ConsoleColor.Cyan);
             }
+            packet.Save();
             Client.HandleRequestPacket((TGAMEPACKET)packet.Id, packet);
         }
 

@@ -14,51 +14,8 @@ namespace Py_Game.GameTools
     {
         public static int[] _THole18 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
         public static int[] _TMap19 = { 0x14, 0x12, 0x13, 0x10, 0x0F, 0x0E, 0x0D, 0x0B, 0x08, 0x0A, 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x09 };
-
-        public static void Save(string name, byte[] value)
-        {
-           File.WriteAllBytes($"savepacket\\{name}{value[1] * 10 + 1}.hex", value);
-        }
-        public static string ToHexString(string HexArray)
-        {
-            var count = 0;
-            string[] split = (from Match m in Regex.Matches(HexArray, "..") select m.Value).ToArray();
-
-            StringBuilder sb = new StringBuilder();
-
-            foreach (var hexValue in split)
-            {
-                count++;
-                if (count == HexArray.Length)
-                {
-                    sb.Append("0x" + hexValue + "");
-                }
-                else
-                {
-                    sb.Append("0x" + hexValue + ", ");
-                }
-            }
-            return sb.ToString();
-        }
-        public static string ToHexString(byte[] HexArray)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < HexArray.Length; i++)
-            {
-                if ((i + 1) == HexArray.Length)
-                {
-                    sb.Append("0x" + HexArray[i].ToString("X2") + "");
-                }
-                else
-                {
-                    sb.Append("0x" + HexArray[i].ToString("X2") + ", ");
-                }
-            }
-
-            return sb.ToString();
-        }
-
+     
+        
         public static ushort GetMap()
         {
             var Map = _TMap19;
@@ -255,17 +212,7 @@ namespace Py_Game.GameTools
             return dtDateTime;
         }
 
-        public static void SaveWrite(byte[] Data, string name)
-        {
-            if (File.Exists($"savepacket\\{name}") == false)
-            {
-                File.WriteAllBytes($"savepacket\\{name}", Data);
-            }
-            else
-            {
-                File.WriteAllBytes($"savepacket\\{name + new Random().Next()}", Data);
-            }
-        }
+     
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static uint GetCaddieTypeIDBySkinID(uint SkinTypeID)

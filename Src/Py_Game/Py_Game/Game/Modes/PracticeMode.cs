@@ -83,14 +83,14 @@ namespace Py_Game.Game.Modes
             response.Write(fGameData.HoleTotal);
             response.Write((byte)4);//GameType
             response.Write((ushort)ID);
-            response.Write(fGameData.Mode);
+            response.WriteByte(4);
             response.Write(fGameData.Map);
             response.Write(fGameData.VSTime);
             response.Write(fGameData.GameTime);
             response.Write(0);
             response.Write(Idle);
             response.Write(fGameData.GMEvent); //GM Event 0(false), ON 1(true)
-            response.WriteZero(77);//GUILD DATA
+            response.WriteZero(76);//GUILD DATA
             response.Write(100);// rate pang 
             response.Write(100);// rate chuva 
             response.Write(Owner);

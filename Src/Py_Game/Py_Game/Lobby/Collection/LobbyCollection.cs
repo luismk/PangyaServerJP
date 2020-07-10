@@ -27,23 +27,7 @@ namespace Py_Game.Lobby.Collection
                     ushort maxuser = Ini.ReadUInt16("Channel", $"ChannelMaxUser_{i}", 100);
                     byte Id = Ini.ReadByte("Channel", $"ChannelID_{i}", i);
                     uint flag = Ini.ReadUInt32("Channel", $"ChannelFlag_{i}", 2048);
-                    var lobby = new Channel(name, maxuser, Id, flag);                    
-                    //gameInfo = new GameInformation()
-                    //{
-                    //    GameType = GAME_TYPE.GM_EVENT,
-                    //    Mode = 0,
-                    //    GameTime = (uint)(60 * 50) * 1000,
-                    //    MaxPlayer = 100,
-                    //    Map = 0x40,
-                    //    NaturalMode = 0,
-                    //    HoleTotal = 1,
-                    //    Name = $"HIO Event",
-                    //    Password = string.Empty,
-                    //    GMEvent = true,
-                    //    Artifact = 0,
-                    //    GP = false};
-                    //lobby.CreateGame(null, gameInfo);
-                    // lobby.Games
+                    var lobby = new Channel(name, maxuser, Id, flag);    
                     Add(lobby);
                 }
             }

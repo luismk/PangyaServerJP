@@ -33,6 +33,7 @@ namespace Py_Game.Client
         {
             PangyaBinaryWriter result;
 
+            UserStatistic.Level = 0;
             result = new PangyaBinaryWriter();
             result.WriteUInt32(UserStatistic.Drive);
             result.WriteUInt32(UserStatistic.Putt);
@@ -54,7 +55,7 @@ namespace Py_Game.Client
             result.WriteSingle(UserStatistic.LongestPutt);
             result.WriteSingle(UserStatistic.LongestChip);
             result.WriteUInt32(UserStatistic.EXP);
-            result.WriteByte(UserStatistic.Level);
+            result.WriteByte(UserStatistic.Level);//UserStatistic.Level
             result.WriteUInt64(UserStatistic.Pang);//pangs inicias
             result.WriteUInt32(UserStatistic.TotalScore);
             result.WriteByte(UserStatistic.Score[0]);
@@ -107,7 +108,7 @@ namespace Py_Game.Client
         }
       
         /// <summary>
-        /// Size = 299 bytes
+        /// Is Size = 303 bytes?
         /// </summary>
         /// <returns>login information</returns>
         public byte[] GetLoginInfo()
@@ -116,27 +117,25 @@ namespace Py_Game.Client
             Reply = new PangyaBinaryWriter();
             try
             {
+                GetCapability = 4;
                 Reply.WriteUInt16(GameID);
                 Reply.WriteStr(GetLogin, 22);
                 Reply.WriteStr(GetNickname, 22);
                 Reply.WriteStr(GuildInfo.Name, 21);
                 Reply.WriteStr(GuildInfo.Image, 9);
                 Reply.WriteZero(7);
-                Reply.WriteUInt64(0);//GetCapability
-                Reply.WriteUInt32(ConnectionID);//is connection ID
-                Reply.WriteUInt32(0);
-                Reply.WriteUInt32(0);
-                Reply.WriteUInt32(0);
+                Reply.WriteUInt64(GetCapability);
+                Reply.WriteUInt32(ConnectionID);
+                Reply.WriteZero(12);
                 Reply.WriteUInt64(GuildInfo.ID);
                 Reply.Write((uint)0); //????
-                Reply.WriteUInt16(0);//is sexy?
+                Reply.WriteUInt16(GetSex);
                 Reply.Write(new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF });
-                Reply.WriteUInt32(0);
-                Reply.WriteUInt32(0);
-                Reply.WriteUInt32(0);
-                Reply.WriteStr(GetSubLogin, 142);
-                Reply.WriteUInt32(GetUID);
-                Tools.SaveWrite(Reply.GetBytes(), "GetLoginInfo");
+                Reply.WriteZero(12);
+                Reply.WriteStr(GetSubLogin, 18);
+                Reply.WriteZero(142);
+                Reply.WriteUInt32(GetUID);                
+                Reply.SaveWrite("NewPlayerLogin");
                 return Reply.GetBytes();
             }
             finally
@@ -149,8 +148,8 @@ namespace Py_Game.Client
         {
             using (var Reply = new PangyaBinaryWriter())
             {
-                Reply.WriteStr(GetNickname, 40);                
-                Reply.WriteStr(GuildInfo.Name, 17);//bytes 39 
+                Reply.WriteStr(GetNickname, 22);    //25            
+                Reply.WriteStr(GuildInfo.Name, 20);//bytes 39 
                 Reply.WriteByte(GameInfo.GameSlot);//40 bytes
                 Reply.WriteUInt32(Visible);//44 bytes
                 Reply.WriteUInt32(Inventory.GetTitleTypeID());
@@ -159,10 +158,11 @@ namespace Py_Game.Client
                 Reply.WriteByte(GameInfo.Role);//77 bytes
                 Reply.WriteByte(TCompare.IfCompare<byte>(GameInfo.GameReady, 0x02, 0x00));//78 bytes
                 Reply.WriteByte(GetLevel); // 79 bytes
-                Reply.WriteByte(2); // 80 bytes
+                Reply.WriteByte(0); // 80 bytes
                 Reply.WriteByte(0x0A);// 81 bytes
                 Reply.WriteUInt32(GuildInfo.ID); // 85 bytes
-                Reply.WriteStr(TCompare.IfCompare(GuildInfo.Image.Length <= 0, "guildmark", GuildInfo.Image), 12);//94 bytes
+                Reply.WriteStr(TCompare.IfCompare(GuildInfo.Image.Length <= 0, "guildmark", GuildInfo.Image), 9);//94 bytes
+                Reply.WriteUInt32(4);
                 Reply.WriteUInt32(GetUID);//101 bytes
                 Reply.Write(GameInfo.Action.ToArray());//123 bytes
                 Reply.WriteUInt32(GameInfo.GameShop.ShopOwnerID);//ID Shop//127 bytes
@@ -171,11 +171,13 @@ namespace Py_Game.Client
                 Reply.WriteUInt32(Inventory.GetMascotTypeID());//195 bytes
                 Reply.WriteByte(TCompare.IfCompare<byte>(Inventory.IsExist(436207618), 0x1, 0x0)); // Pang Mastery// 196 bytes
                 Reply.WriteByte(TCompare.IfCompare<byte>(Inventory.IsExist(436207621), 0x1, 0x0)); // Nitro Pang Mastery//197 bytes
-                Reply.WriteZero(150);//329 bytes
+                Reply.WriteZero(4);
+                Reply.WriteStr(GetSubLogin, 18);
+                Reply.WriteZero(110);
                 Reply.Write(0);//333 bytes = 0x1400006C
                 Reply.Write(0);//337 bytes = 0x42000000
                 var Getbytes = Reply.GetBytes();
-                Tools.SaveWrite(Getbytes,"GetGameInfo");
+                Reply.SaveWrite("GetGameInfo");
                 return (Getbytes);
             }
         }
@@ -195,12 +197,8 @@ namespace Py_Game.Client
             Reply.WriteStr(GuildInfo.Notice, 101);//GUILD_Notice
             Reply.WriteStr(GuildInfo.Introducing, 101);//GUILD_INTRODUCING
             Reply.WriteUInt32(GuildInfo.Position);// Guild Position
-            Reply.WriteUInt32(TCompare.IfCompare<uint>(GuildInfo.LeaderUID == 0, uint.MaxValue, GuildInfo.LeaderUID)); //// Guild Leader UID?
-            Reply.WriteStr(GuildInfo.LeaderNickname, 22);
-            if (GuildInfo.ID >= 1)
-            {
-                Response.Write(Tools.GetFixTime(GuildInfo.Create_Date));
-            }
+            Reply.WriteUInt32(TCompare.IfCompare(GuildInfo.LeaderUID == 0, uint.MaxValue, GuildInfo.LeaderUID)); //// Guild Leader UID?
+            Reply.WriteStr(GuildInfo.LeaderNickname, 22);           
             return Reply.GetBytes();
         }
 
@@ -270,7 +268,6 @@ namespace Py_Game.Client
             Response.Write(new byte[] { 0x44, 0x00 });
             Response.WriteByte(0);
             Response.WritePStr(version);
-            Response.WriteStr("UG_GAMESERVER_1.00",18);//is name version server ?
             Response.Write(GetLoginInfo());
             Response.Write(Statistic());
             Response.Write(Inventory.GetTrophyInfo());
@@ -295,7 +292,7 @@ namespace Py_Game.Client
             {
                 Response.Write(Server.Data.BlockFunc);//block? 37363656
             }
-            Response.WriteUInt32(2);// block 2? 363, 9?
+            Response.WriteUInt32(363);// LoginFlag = 2? 363, 9?
             Response.WriteUInt32(Server.Data.Property); // Grand Prix 2048, normal 0, 256 ?
             Response.Write(GetGuildInfo());
             SendResponse();

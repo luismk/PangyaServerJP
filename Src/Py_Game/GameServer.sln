@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Py_Game", "Py_Game\Py_Game.csproj", "{17A534FF-EF1F-4D2E-9739-EBBE99612602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PangyaFileCore", "..\PangyaFileCore\PangyaFileCore.csproj", "{6B47B60C-20BC-448C-8ECA-114749FAF412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PangyaAPI", "..\PangyaAPI\PangyaAPI\PangyaAPI.csproj", "{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Py_Connector", "..\Py_Connector\Py_Connector\Py_Connector.csproj", "{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17A534FF-EF1F-4D2E-9739-EBBE99612602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A534FF-EF1F-4D2E-9739-EBBE99612602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A534FF-EF1F-4D2E-9739-EBBE99612602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A534FF-EF1F-4D2E-9739-EBBE99612602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B47B60C-20BC-448C-8ECA-114749FAF412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B47B60C-20BC-448C-8ECA-114749FAF412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B47B60C-20BC-448C-8ECA-114749FAF412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B47B60C-20BC-448C-8ECA-114749FAF412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53A1B9A-46E2-453A-BD76-F2D82B710CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9351C3B8-97E1-49EC-A103-AC006B3FB2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21B611D0-EB61-49DF-BCBA-3013AF8727B6}
+	EndGlobalSection
+EndGlobal

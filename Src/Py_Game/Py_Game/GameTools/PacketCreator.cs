@@ -117,13 +117,14 @@ namespace Py_Game.GameTools
             using (var Response = new PangyaBinaryWriter())
             {
                 Response.WriteStr(LobbyName, 21);
-                Response.Write(new byte[] { 0x01, 0x00, 0x00, 0x01 });
-                Response.WriteZero(15);
-                Response.Write(new byte[] { 0x08, 0x10, 0x06, 0x07, 0x1a });
-                Response.WriteZero(7);
-                Response.Write(new byte[] { 0x01, 0x14, 0x00, 0x00 }); // Secound byte is variable
-                Response.Write(new byte[] { 0x64, 0x02, 0x00, 0x1a });
-                Response.WriteZero(4);
+                //Response.Write(new byte[] { 0x01, 0x00, 0x00, 0x01 });
+                //Response.WriteZero(15);
+                //Response.Write(new byte[] { 0x08, 0x10, 0x06, 0x07, 0x1a });
+                //Response.WriteZero(7);
+                //Response.Write(new byte[] { 0x01, 0x14, 0x00, 0x00 }); // Secound byte is variable
+                //Response.Write(new byte[] { 0x64, 0x02, 0x00, 0x1a });
+                //Response.WriteZero(4);
+                Response.Write(new byte[] { 0x01, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x10, 0x06, 0x07, 0x1A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x14, 0x00, 0x00, 0x64, 0x02, 0x00, 0x1A, 0x00, 0x00, 0x00, 0x00, });
                 Response.WriteUInt16(MaxPlayers);
                 Response.WriteUInt16(PlayersCount);
                 Response.Write(LobbyID); //Lobby ID

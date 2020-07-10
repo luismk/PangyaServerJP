@@ -164,19 +164,9 @@ namespace PangyaAPI.PangyaClient
             {
                 Tcp.GetStream().Write(buffer, 0, buffer.Length);
             }
-            Task.Delay(1000);
+            Task.Delay(5000);
         }
-        public void SaveWrite(string name = "")
-        {
-            if (File.Exists($"savepacket\\{name}") == false)
-            {
-                File.WriteAllBytes($"savepacket\\{name}", Response.GetBytes());
-            }
-            else
-            {
-                File.WriteAllBytes($"savepacket\\{name + new Random().Next()}", Response.GetBytes());
-            }
-        }
+       
         /// </summary>
         public void RefreshData()
         {

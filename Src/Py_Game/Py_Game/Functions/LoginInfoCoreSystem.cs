@@ -75,7 +75,7 @@ namespace Py_Game.Functions
 
             #region PlayerGetGuildInfo
             player.Response.Write(new byte[] { 0x5D, 0x01 });
-            player.Response.Write(GetPlayer.GetUID);
+            player.Response.WriteUInt64(GetPlayer.GetUID);
             player.Response.Write(GetPlayer.GetGuildInfo());
             player.Response.Write(Tools.GetFixTime(GetPlayer.GuildInfo.Create_Date));
             player.SendResponse();

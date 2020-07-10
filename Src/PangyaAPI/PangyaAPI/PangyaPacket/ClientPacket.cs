@@ -227,8 +227,8 @@ namespace PangyaAPI.PangyaPacket
             {
                 Directory.CreateDirectory("savepacket");
             }
-            File.WriteAllBytes($"savepacket\\{Id}{NextID}.Hex", Message);
-            File.WriteAllText($"savepacket\\{Id}{NextID}.txt", Message.HexDump());
+            File.WriteAllBytes($"savepacket\\{Id}-{NextID}.Hex", Message);
+            File.WriteAllText($"savepacket\\{Id}-{NextID}.txt", Message.HexDump());
         }
 
         public void SetReader(PangyaBinaryReader read)
