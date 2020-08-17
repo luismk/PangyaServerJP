@@ -25,4 +25,4 @@ edit or .ini files to connect to the online server or localhost
 ## Authors
 * **Eric Antonio** - *Base Project Creator* - [Pangya Unogames](https://github.com/eantoniobr)
 * **Luis MK** - *Project contributor* - [Pangya Unogames](https://github.com/luismk)
-* **Fumitti** - *Project Influencer* - [Pangya Unogames](https://github.com/fumitti)
+* **Fumitti** - *Project Influencer* - [Cadies's Cauldron](https://github.com/fumitti)
